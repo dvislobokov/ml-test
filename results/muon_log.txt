@@ -1,0 +1,22 @@
+mlp muon lr=0.01 step     0 t=    0.0s val_loss=2.3083 acc=0.1086
+mlp muon lr=0.01 step    50 t=    1.7s val_loss=0.3200 acc=0.9048
+mlp muon lr=0.01 step   100 t=    3.2s val_loss=0.1778 acc=0.9481
+mlp muon lr=0.01 step   150 t=    4.7s val_loss=0.1176 acc=0.9647
+mlp muon lr=0.01 step   200 t=    6.3s val_loss=0.0997 acc=0.9695
+mlp muon lr=0.01 step   250 t=    7.8s val_loss=0.0925 acc=0.9704
+mlp muon lr=0.01 step   300 t=    9.6s val_loss=0.0787 acc=0.9747
+mlp muon lr=0.01 step   350 t=   11.5s val_loss=0.0693 acc=0.9777
+mlp muon lr=0.01 step   400 t=   13.3s val_loss=0.0767 acc=0.9751
+mlp muon lr=0.01 step   450 t=   14.9s val_loss=0.0664 acc=0.9784
+mlp muon lr=0.01 step   500 t=   16.7s val_loss=0.0665 acc=0.9785
+mlp muon lr=0.01 step   550 t=   18.4s val_loss=0.0671 acc=0.9786
+mlp muon lr=0.01 step   600 t=   20.1s val_loss=0.0600 acc=0.9808
+mlp muon lr=0.01 step   650 t=   21.9s val_loss=0.0572 acc=0.9824
+mlp muon lr=0.01 step   700 t=   23.6s val_loss=0.0564 acc=0.9805
+mlp muon lr=0.01 step   750 t=   25.3s val_loss=0.0553 acc=0.9819
+mlp muon lr=0.01 step   800 t=   27.2s val_loss=0.0522 acc=0.9838
+mlp muon lr=0.01 step   850 t=   29.1s val_loss=0.0483 acc=0.9839
+mlp muon lr=0.01 step   900 t=   30.8s val_loss=0.0472 acc=0.9842
+mlp muon lr=0.01 step   950 t=   32.5s val_loss=0.0456 acc=0.9847
+mlp muon lr=0.01 step  1000 t=   34.0s val_loss=0.0450 acc=0.9852
+DONE mlp muon 0.01 1000 0
