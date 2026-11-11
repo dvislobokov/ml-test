@@ -64,3 +64,15 @@ mlp muon lr=0.1 step   900 t=   31.4s val_loss=0.2592 acc=0.9719
 mlp muon lr=0.1 step   950 t=   32.9s val_loss=0.2379 acc=0.9747
 mlp muon lr=0.1 step  1000 t=   34.6s val_loss=0.2255 acc=0.9764
 DONE mlp muon 0.1 1000 0
+gpt adamw lr=0.0003 step     0 t=    0.0s val_loss=4.2112 acc=0.0074
+gpt adamw lr=0.0003 step    50 t=    5.1s val_loss=2.8686 acc=0.2614
+gpt adamw lr=0.0003 step   100 t=    9.3s val_loss=2.6585 acc=0.2752
+gpt adamw lr=0.0003 step   150 t=   13.7s val_loss=2.5704 acc=0.2812
+gpt adamw lr=0.0003 step   200 t=   18.2s val_loss=2.5130 acc=0.2889
+gpt adamw lr=0.0003 step   250 t=   22.6s val_loss=2.4772 acc=0.2894
+gpt adamw lr=0.0003 step   300 t=   26.6s val_loss=2.4364 acc=0.2988
+gpt adamw lr=0.0003 step   350 t=   31.0s val_loss=2.4023 acc=0.3066
+gpt adamw lr=0.0003 step   400 t=   36.0s val_loss=2.3775 acc=0.3105
+gpt adamw lr=0.0003 step   450 t=   40.2s val_loss=2.3635 acc=0.3135
+gpt adamw lr=0.0003 step   500 t=   44.8s val_loss=2.3566 acc=0.3146
+DONE gpt adamw 3e-4 500 0
