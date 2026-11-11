@@ -18,3 +18,5 @@ RESULT mlp cold-2 seed=1 ms/step=20.0 opt=15.7 val_loss=0.0573 acc=0.9809 cos=0.
 DONE fast mlp cold-2 0.01 1000 1
 RESULT mlp lazy-4 seed=1 ms/step=15.6 opt=11.7 val_loss=0.0711 acc=0.9795 cos=0.142 sv=[0.00,244.19] {'cold': 500, 'warm': 0, 'lazy': 1500}
 DONE fast mlp lazy-4 0.01 1000 1
+RESULT mlp lazy-16 seed=1 ms/step=8.8 opt=5.2 val_loss=0.0815 acc=0.9761 cos=0.179 sv=[0.00,101.83] {'cold': 126, 'warm': 0, 'lazy': 1874}
+DONE fast mlp lazy-16 0.01 1000 1
