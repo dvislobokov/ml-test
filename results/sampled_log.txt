@@ -1,0 +1,21 @@
+RESULT adamw batch=32 frac=1.0 seed=0 steps=566 ms/step=79.6 val_loss=2.1694
+RESULT adamw batch=32 frac=0.25 seed=0 steps=573 ms/step=78.5 val_loss=2.2764
+RESULT adamw batch=32 frac=0.125 seed=0 steps=565 ms/step=79.7 val_loss=2.3481
+RESULT adamw batch=16 frac=1.0 seed=0 steps=987 ms/step=45.6 val_loss=2.0422
+RESULT adamw batch=8 frac=1.0 seed=0 steps=1821 ms/step=24.7 val_loss=1.9249
+RESULT muon batch=32 frac=1.0 seed=0 steps=485 ms/step=92.8 val_loss=1.6472
+RESULT muon batch=32 frac=0.25 seed=0 steps=502 ms/step=89.7 val_loss=1.8179
+RESULT muon batch=32 frac=0.125 seed=0 steps=496 ms/step=90.8 val_loss=1.9160
+RESULT muon batch=16 frac=1.0 seed=0 steps=749 ms/step=60.2 val_loss=1.6653
+RESULT muon batch=8 frac=1.0 seed=0 steps=1185 ms/step=38.0 val_loss=1.7312
+RESULT adamw batch=32 frac=1.0 seed=1 steps=501 ms/step=89.9 val_loss=2.2333
+RESULT adamw batch=32 frac=0.25 seed=1 steps=521 ms/step=86.5 val_loss=2.3213
+RESULT adamw batch=32 frac=0.125 seed=1 steps=552 ms/step=81.6 val_loss=2.3714
+RESULT adamw batch=16 frac=1.0 seed=1 steps=982 ms/step=45.9 val_loss=2.0347
+RESULT adamw batch=8 frac=1.0 seed=1 steps=1641 ms/step=27.4 val_loss=1.9789
+RESULT muon batch=32 frac=1.0 seed=1 steps=454 ms/step=99.2 val_loss=1.6665
+RESULT muon batch=32 frac=0.25 seed=1 steps=476 ms/step=94.7 val_loss=1.8207
+RESULT muon batch=32 frac=0.125 seed=1 steps=523 ms/step=86.2 val_loss=1.9095
+RESULT muon batch=16 frac=1.0 seed=1 steps=724 ms/step=62.2 val_loss=1.6702
+RESULT muon batch=8 frac=1.0 seed=1 steps=1147 ms/step=39.3 val_loss=1.7157
+ALL_DONE

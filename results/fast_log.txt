@@ -26,3 +26,15 @@ RESULT gpt cold-5 seed=0 ms/step=104.3 opt=18.8 val_loss=1.6441 acc=0.5073 cos=0
 DONE fast gpt cold-5 0.03 500 0
 RESULT gpt cold-3 seed=0 ms/step=170.6 opt=49.2 val_loss=1.6630 acc=0.5025 cos=0.880 sv=[0.01,1.20] {'cold': 8000, 'warm': 0, 'lazy': 0}
 DONE fast gpt cold-3 0.03 500 0
+RESULT gpt cold-2 seed=0 ms/step=92.9 opt=10.7 val_loss=1.7841 acc=0.4699 cos=0.699 sv=[0.00,1.20] {'cold': 8000, 'warm': 0, 'lazy': 0}
+DONE fast gpt cold-2 0.03 500 0
+RESULT gpt lazy-4 seed=0 ms/step=106.6 opt=8.7 val_loss=2.5712 acc=0.2577 cos=0.540 sv=[0.04,3.49] {'cold': 2000, 'warm': 0, 'lazy': 6000}
+DONE fast gpt lazy-4 0.03 500 0
+RESULT gpt warm seed=0 ms/step=107.0 opt=22.8 val_loss=1.6441 acc=0.5073 cos=0.979 sv=[0.18,1.20] {'cold': 8000, 'warm': 0, 'lazy': 0}
+DONE fast gpt warm 0.03 500 0
+DONE amp=1 mlp adamw 1e-3 1000 0
+DONE amp=0 mlp adamw 1e-3 1000 1
+DONE amp=1 mlp adamw 1e-3 1000 1
+DONE amp=1 gpt adamw 1e-3 500 0
+DONE amp=1 gpt muon 0.03 500 0
+ALL_DONE
