@@ -22,3 +22,5 @@ RESULT mlp lazy-16 seed=1 ms/step=8.8 opt=5.2 val_loss=0.0815 acc=0.9761 cos=0.1
 DONE fast mlp lazy-16 0.01 1000 1
 RESULT mlp warm seed=1 ms/step=46.6 opt=42.2 val_loss=0.0526 acc=0.9830 cos=0.624 sv=[0.00,1.20] {'cold': 2000, 'warm': 0, 'lazy': 0}
 DONE fast mlp warm 0.01 1000 1
+RESULT gpt cold-5 seed=0 ms/step=104.3 opt=18.8 val_loss=1.6441 acc=0.5073 cos=0.979 sv=[0.18,1.20] {'cold': 8000, 'warm': 0, 'lazy': 0}
+DONE fast gpt cold-5 0.03 500 0
