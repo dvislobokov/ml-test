@@ -184,3 +184,36 @@ gpt adamw lr=0.001 step  1400 t=  121.8s val_loss=1.7524 acc=0.4777
 gpt adamw lr=0.001 step  1450 t=  126.0s val_loss=1.7445 acc=0.4799
 gpt adamw lr=0.001 step  1500 t=  129.8s val_loss=1.7382 acc=0.4821
 DONE gpt adamw 1e-3 1500 2
+gpt muon lr=0.03 step     0 t=    0.0s val_loss=4.1522 acc=0.0236
+gpt muon lr=0.03 step    50 t=    4.6s val_loss=2.4479 acc=0.2880
+gpt muon lr=0.03 step   100 t=    9.4s val_loss=2.1499 acc=0.3707
+gpt muon lr=0.03 step   150 t=   14.3s val_loss=1.9722 acc=0.4159
+gpt muon lr=0.03 step   200 t=   19.1s val_loss=1.8938 acc=0.4369
+gpt muon lr=0.03 step   250 t=   24.3s val_loss=1.8379 acc=0.4548
+gpt muon lr=0.03 step   300 t=   29.7s val_loss=1.7786 acc=0.4746
+gpt muon lr=0.03 step   350 t=   35.0s val_loss=1.7486 acc=0.4819
+gpt muon lr=0.03 step   400 t=   40.9s val_loss=1.7268 acc=0.4866
+gpt muon lr=0.03 step   450 t=   46.7s val_loss=1.7010 acc=0.4957
+gpt muon lr=0.03 step   500 t=   52.0s val_loss=1.6959 acc=0.4975
+gpt muon lr=0.03 step   550 t=   57.7s val_loss=1.6721 acc=0.5016
+gpt muon lr=0.03 step   600 t=   63.3s val_loss=1.6458 acc=0.5119
+gpt muon lr=0.03 step   650 t=   69.2s val_loss=1.6346 acc=0.5122
+gpt muon lr=0.03 step   700 t=   74.2s val_loss=1.6255 acc=0.5168
+gpt muon lr=0.03 step   750 t=   79.9s val_loss=1.6193 acc=0.5178
+gpt muon lr=0.03 step   800 t=   84.9s val_loss=1.5993 acc=0.5246
+gpt muon lr=0.03 step   850 t=   90.3s val_loss=1.5963 acc=0.5266
+gpt muon lr=0.03 step   900 t=   95.8s val_loss=1.5868 acc=0.5301
+gpt muon lr=0.03 step   950 t=  100.7s val_loss=1.5744 acc=0.5293
+gpt muon lr=0.03 step  1000 t=  106.1s val_loss=1.5641 acc=0.5335
+gpt muon lr=0.03 step  1050 t=  111.4s val_loss=1.5671 acc=0.5331
+gpt muon lr=0.03 step  1100 t=  116.5s val_loss=1.5432 acc=0.5401
+gpt muon lr=0.03 step  1150 t=  121.1s val_loss=1.5455 acc=0.5402
+gpt muon lr=0.03 step  1200 t=  126.5s val_loss=1.5381 acc=0.5421
+gpt muon lr=0.03 step  1250 t=  131.9s val_loss=1.5250 acc=0.5462
+gpt muon lr=0.03 step  1300 t=  137.2s val_loss=1.5304 acc=0.5455
+gpt muon lr=0.03 step  1350 t=  143.0s val_loss=1.5257 acc=0.5470
+gpt muon lr=0.03 step  1400 t=  147.8s val_loss=1.5194 acc=0.5480
+gpt muon lr=0.03 step  1450 t=  152.5s val_loss=1.5147 acc=0.5500
+gpt muon lr=0.03 step  1500 t=  158.0s val_loss=1.5139 acc=0.5500
+DONE gpt muon 0.03 1500 2
+ALL_DONE

@@ -8,6 +8,7 @@ Muon применяется только к двумерным весам скр
   python3 muon_exp.py gpt muon  0.02 600 0
 """
 import json
+import os
 import sys
 import time
 
@@ -15,6 +16,9 @@ import torch
 import torch.nn.functional as F
 
 from common import MLP, MiniGPT, load_mnist, load_text, text_batch
+
+
+AMP = os.environ.get("AMP") == "1"  # прямой и обратный проход в bfloat16
 
 
 def build(task, seed):
@@ -82,7 +86,8 @@ def main(task, optname, lr, steps, seed, every=50):
             for gp, lr0 in zip(o.param_groups, b):
                 gp["lr"] = lr0 * frac
         x, y = batch()
-        loss = loss_fn(model(x), y)
+        with torch.autocast("cpu", dtype=torch.bfloat16, enabled=AMP):
+            loss = loss_fn(model(x), y)
         for o in opts:
             o.zero_grad(set_to_none=True)
         loss.backward()
@@ -93,7 +98,7 @@ def main(task, optname, lr, steps, seed, every=50):
         t_train += t2 - t0
         t_opt += t2 - t1
     return {
-        "task": task, "opt": optname, "lr": lr, "steps": steps, "seed": seed,
+        "task": task, "opt": optname + ("+bf16" if AMP else ""), "lr": lr, "steps": steps, "seed": seed,
         "ms_per_step": 1e3 * t_train / steps, "opt_ms_per_step": 1e3 * t_opt / steps,
         "log": log,
     }

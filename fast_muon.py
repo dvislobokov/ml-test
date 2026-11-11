@@ -40,14 +40,17 @@ def cold_polar(M, steps, want_S=False):
 
 class FastMuon(torch.optim.Optimizer):
     def __init__(self, params, lr=0.02, momentum=0.95, mode="cold", ns_steps=5,
-                 lazy_k=4, restart_tol=0.5):
+                 lazy_k=4, restart_tol=0.5, dtype=torch.bfloat16):
         super().__init__(params, dict(lr=lr, momentum=momentum))
         self.mode, self.ns_steps, self.lazy_k, self.tol = mode, ns_steps, lazy_k, restart_tol
+        self.dtype = dtype
         self.stats = {"cold": 0, "warm": 0, "lazy": 0}
         self.last = {}  # id(p) -> последнее применённое обновление (для диагностики)
 
     def _orth(self, M, st):
-        """M: [m, n], m >= n."""
+        """M: [m, n], m >= n. Считаем в bfloat16, как встроенный torch.optim.Muon:
+        на процессорах с AMX это в ~4 раза быстрее float32 при том же качестве."""
+        M = M.to(self.dtype)
         if self.mode == "cold":
             self.stats["cold"] += 1
             return cold_polar(M, self.ns_steps)[0]
@@ -90,6 +93,7 @@ class FastMuon(torch.optim.Optimizer):
                 M = p.grad.add(buf, alpha=g["momentum"])  # Нестеров
                 tall = M.shape[0] >= M.shape[1]
                 X = self._orth(M if tall else M.T, st)
+                X = X.to(p.dtype)
                 if not tall:
                     X = X.T
                 st["t"] += 1
