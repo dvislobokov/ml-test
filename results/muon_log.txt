@@ -152,3 +152,35 @@ gpt muon lr=0.03 step  1400 t=  144.8s val_loss=1.5295 acc=0.5501
 gpt muon lr=0.03 step  1450 t=  149.8s val_loss=1.5256 acc=0.5520
 gpt muon lr=0.03 step  1500 t=  154.8s val_loss=1.5228 acc=0.5523
 DONE gpt muon 0.03 1500 1
+gpt adamw lr=0.001 step     0 t=    0.0s val_loss=4.1522 acc=0.0236
+gpt adamw lr=0.001 step    50 t=    4.6s val_loss=2.6804 acc=0.2577
+gpt adamw lr=0.001 step   100 t=    9.1s val_loss=2.5335 acc=0.2747
+gpt adamw lr=0.001 step   150 t=   13.7s val_loss=2.4797 acc=0.2821
+gpt adamw lr=0.001 step   200 t=   18.0s val_loss=2.4267 acc=0.2933
+gpt adamw lr=0.001 step   250 t=   22.2s val_loss=2.3380 acc=0.3094
+gpt adamw lr=0.001 step   300 t=   27.0s val_loss=2.2959 acc=0.3198
+gpt adamw lr=0.001 step   350 t=   31.4s val_loss=2.2425 acc=0.3378
+gpt adamw lr=0.001 step   400 t=   35.5s val_loss=2.1955 acc=0.3506
+gpt adamw lr=0.001 step   450 t=   39.6s val_loss=2.1393 acc=0.3700
+gpt adamw lr=0.001 step   500 t=   43.8s val_loss=2.1249 acc=0.3733
+gpt adamw lr=0.001 step   550 t=   48.1s val_loss=2.0707 acc=0.3886
+gpt adamw lr=0.001 step   600 t=   52.4s val_loss=2.0326 acc=0.3953
+gpt adamw lr=0.001 step   650 t=   56.8s val_loss=1.9959 acc=0.4092
+gpt adamw lr=0.001 step   700 t=   61.1s val_loss=1.9834 acc=0.4129
+gpt adamw lr=0.001 step   750 t=   65.1s val_loss=1.9442 acc=0.4232
+gpt adamw lr=0.001 step   800 t=   69.3s val_loss=1.9202 acc=0.4289
+gpt adamw lr=0.001 step   850 t=   73.9s val_loss=1.9036 acc=0.4349
+gpt adamw lr=0.001 step   900 t=   78.5s val_loss=1.8760 acc=0.4440
+gpt adamw lr=0.001 step   950 t=   82.8s val_loss=1.8678 acc=0.4440
+gpt adamw lr=0.001 step  1000 t=   87.3s val_loss=1.8529 acc=0.4493
+gpt adamw lr=0.001 step  1050 t=   91.4s val_loss=1.8454 acc=0.4516
+gpt adamw lr=0.001 step  1100 t=   96.1s val_loss=1.8073 acc=0.4601
+gpt adamw lr=0.001 step  1150 t=  100.4s val_loss=1.8038 acc=0.4643
+gpt adamw lr=0.001 step  1200 t=  104.9s val_loss=1.7934 acc=0.4656
+gpt adamw lr=0.001 step  1250 t=  108.9s val_loss=1.7756 acc=0.4696
+gpt adamw lr=0.001 step  1300 t=  113.2s val_loss=1.7689 acc=0.4734
+gpt adamw lr=0.001 step  1350 t=  117.6s val_loss=1.7634 acc=0.4760
+gpt adamw lr=0.001 step  1400 t=  121.8s val_loss=1.7524 acc=0.4777
+gpt adamw lr=0.001 step  1450 t=  126.0s val_loss=1.7445 acc=0.4799
+gpt adamw lr=0.001 step  1500 t=  129.8s val_loss=1.7382 acc=0.4821
+DONE gpt adamw 1e-3 1500 2
