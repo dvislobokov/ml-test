@@ -1,0 +1,1 @@
+RESULT muon batch=8 lr=0.03 seed=0 steps=1258 ms/step=35.8 opt=14.8 val_loss=1.7264
