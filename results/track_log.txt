@@ -10,3 +10,4 @@ RESULT muon batch=16 lr=0.03 seed=1 steps=903 ms/step=49.9 opt=14.7 val_loss=1.6
 RESULT track batch=16 lr=0.03 alpha=1.0 beta=0.0 iters=1 refresh=4 seed=1 steps=1069 ms/step=42.1 opt=7.1 val_loss=1.6249
 RESULT muon batch=32 lr=0.03 seed=1 steps=489 ms/step=92.1 opt=16.4 val_loss=1.6416
 RESULT track batch=32 lr=0.03 alpha=1.0 beta=0.0 iters=1 refresh=4 seed=1 steps=561 ms/step=80.4 opt=7.8 val_loss=1.6541
+RESULT muon batch=8 lr=0.03 seed=2 steps=1276 ms/step=35.3 opt=14.5 val_loss=1.6877
