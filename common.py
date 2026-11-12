@@ -129,7 +129,7 @@ class MiniGPT(nn.Module):
             nn.init.normal_(m.weight, std=0.02)
 
     def forward(self, idx):
-        x = self.tok(idx) + self.pos(torch.arange(idx.shape[1]))
+        x = self.tok(idx) + self.pos(torch.arange(idx.shape[1], device=idx.device))
         for b in self.blocks:
             x = b(x)
         return self.head(self.ln(x))
