@@ -5,6 +5,7 @@
   python3 track_exp.py track 8 0.03 45 0 0.3        # TrackMuon, alpha=0.3
   python3 track_exp.py track 8 0.03 45 0 0.3 0.5 2  # ... beta=0.5, 2 итерации
 Аргументы: вариант, батч, шаг обучения, бюджет времени (с), seed [, alpha, beta, iters, refresh].
+Бюджет вида "1200st" означает фиксированное число шагов вместо времени (сравнение качества шага).
 """
 import json
 import sys
@@ -18,7 +19,7 @@ from muon_exp import evaluate
 from track_muon import TrackMuon
 
 
-def main(variant, batch, lr, budget, seed, alpha=0.3, beta=0.0, iters=1, refresh=0, every_s=5.0):
+def main(variant, batch, lr, budget, seed, alpha=0.3, beta=0.0, iters=1, refresh=0, every_s=5.0, max_steps=0):
     torch.manual_seed(seed)
     g = torch.Generator().manual_seed(seed)
     tr, va, vocab = load_text()
@@ -40,15 +41,20 @@ def main(variant, batch, lr, budget, seed, alpha=0.3, beta=0.0, iters=1, refresh
 
     log, t_train, t_opt, steps, next_eval = [], 0.0, 0.0, 0, 0.0
     while True:
-        done = t_train >= budget
-        if t_train >= next_eval or done:
+        if max_steps:  # режим фиксированного числа шагов: «время» для расписания — доля пройденных шагов
+            done = steps >= max_steps
+            due = steps % max(1, max_steps // 10) == 0
+        else:
+            done = t_train >= budget
+            due = t_train >= next_eval
+        if due or done:
             vl, acc = evaluate(model, val, loss_fn)
             log.append({"step": steps, "time": t_train, "val_loss": vl, "val_acc": acc})
             next_eval += every_s
         if done:
             break
         t0 = time.perf_counter()
-        fr = max(0.0, 1.0 - t_train / budget)
+        fr = (1.0 - steps / max_steps) if max_steps else max(0.0, 1.0 - t_train / budget)
         for o, b in zip(opts, base):
             for gp, lr0 in zip(o.param_groups, b):
                 gp["lr"] = lr0 * fr
@@ -64,7 +70,7 @@ def main(variant, batch, lr, budget, seed, alpha=0.3, beta=0.0, iters=1, refresh
         t_train += t2 - t0
         t_opt += t2 - t1
         steps += 1
-    r = {"variant": variant, "batch": batch, "lr": lr, "budget": budget, "seed": seed,
+    r = {"variant": variant, "batch": batch, "lr": lr, "budget": budget, "max_steps": max_steps, "seed": seed,
          "alpha": alpha, "beta": beta, "iters": iters, "refresh": refresh, "steps": steps,
          "ms_per_step": 1e3 * t_train / steps, "opt_ms_per_step": 1e3 * t_opt / steps, "log": log}
     extra = "" if variant.startswith("muon") else f" alpha={alpha} beta={beta} iters={iters} refresh={refresh}"
@@ -75,8 +81,10 @@ def main(variant, batch, lr, budget, seed, alpha=0.3, beta=0.0, iters=1, refresh
 
 if __name__ == "__main__":
     a = sys.argv
-    r = main(a[1], int(a[2]), float(a[3]), float(a[4]), int(a[5]),
-             float(a[6]) if len(a) > 6 else 0.3, float(a[7]) if len(a) > 7 else 0.0, int(a[8]) if len(a) > 8 else 1, int(a[9]) if len(a) > 9 else 0)
-    if r["budget"] >= 30:
+    st = int(a[4][:-2]) if a[4].endswith("st") else 0
+    r = main(a[1], int(a[2]), float(a[3]), 0.0 if st else float(a[4]), int(a[5]),
+             float(a[6]) if len(a) > 6 else 0.3, float(a[7]) if len(a) > 7 else 0.0, int(a[8]) if len(a) > 8 else 1,
+             int(a[9]) if len(a) > 9 else 0, max_steps=st)
+    if r["budget"] >= 30 or st >= 300:
         with open("results/track_runs.jsonl", "a") as f:
             f.write(json.dumps(r) + "\n")
